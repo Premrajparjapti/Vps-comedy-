@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPS COMEDY</title>
+    <meta name="description" content="Connect with VPS COMEDY on YouTube, Instagram, and Facebook. Enjoy hilarious desi comedy videos, behind-the-scenes content, and stay updated with our latest uploads.">
+    <meta name="author" content="VPS COMEDY is an Indian content creator known for desi comedy, relatable humor, and entertaining YouTube Shorts. Follow us for non-stop laughter and viral fun!">
+    <link rel="icon" href="vps.png" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    /* BASIC RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #1f1f1f, #ff4444);
+  padding: 20px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap; /* Force single line */
+  overflow-x: auto; /* Scroll if too many items */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border-radius: 7px;
+  position: relative;
+  transition: all 0.4s ease;
+  white-space: nowrap;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff4b2b, #ff416c);
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.4s ease;
+  border-radius: 5px;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* MAIN STYLING */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  position: relative;
+}
+
+main h1 {
+  text-align: center;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  position: relative;
+  color: #222;
+}
+
+main h1::after {
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #ff4444;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+html {
+  scroll-padding-top: 200px; /* header ki height ke hisaab se adjust karo */
+  scroll-behavior: smooth;
+}
+
+/* VPS IMAGE POSITIONING */
+main img {
+  position: absolute;
+  top: 0;
+  right: 60%;
+  width: 120px;
+  height: 120px;
+}
+
+/* SHORT BY SELECT */
+form {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+
+form label {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  background-color: white;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.3s;
+}
+
+select:hover,
+select:focus {
+  border-color: #ff4444;
+  box-shadow: 0 0 8px rgba(255, 68, 68, 0.4);
+  outline: none;
+}
+
+/* VIDEO IFRAME */
+iframe {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  margin: 15px auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  border: none;
+  min-height: 400px;
+}
+
+iframe:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ff4444;
+}
+
+/* FOOTER */
+footer {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 50px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 15px;
+  margin-bottom: 20px;
+  scrollbar-width: none;
+}
+
+.social-links::-webkit-scrollbar {
+  display: none;
+}
+
+.social-links a {
+  color: white;
+  font-size: 22px;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+.social-links a[href*="youtube"]:hover {
+  color: #ff0000;
+}
+.social-links a[href*="instagram"]:hover {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(221, 42, 123, 0.6);
+}
+
+.social-links a[href*="facebook"]:hover {
+  color: #3b5998;
+  text-shadow: 0 0 8px #3b5998;
+}
+
+footer p {
+  margin: 10px 0;
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+footer p:hover {
+  opacity: 1;
+  color: #ff4444;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+  }
+
+  form {
+    justify-content: center;
+  }
+
+  main h1 {
+    font-size: 28px;
+  }
+
+  main img {
+    position: static;
+    display: block;
+    margin: 10px auto;
+  }
+
+  iframe {
+    height: 200px;
+  }
+
+  .social-links {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (min-width: 769px) {
+  nav {
+    gap: 30px;
+  }
+
+  main h1 {
+    font-size: 35px;
+  }
+
+  iframe {
+    height: 450px;
+  }
+}
+
+@media (max-width: 992px) {
+  iframe {
+    height: 50px;
+  }
+  main img {
+    position: absolute;
+    top:20px;
+    right: 70%;
+    width: 50px;
+    height: 50px;
+  }
+  @media (max-width: 600px) {
+    header {
+      padding: 15px 10px;
+    }
+  
+    nav {
+      gap: 10px;
+      padding: 0 10px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* smoother scroll on iOS */
+      scroll-snap-type: x mandatory;
+    }
+  
+    nav a {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 4px;
+    }
+  
+    nav::before,
+    nav::after {
+      content: '';
+      flex: 0 0 10px;
+    }
+  }
+  
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+           
+            <a href="#home">Home</a>
+            <a href="https://www.youtube.com/@VPSCOMEDY99" target="_blank"><i class="fab fa-youtube"></i> youtube</a>
+            <a href="https://www.instagram.com/vps______comedy?igsh=Nm03bXp5YjB5eDRv" target="_blank"><i class="fab fa-instagram"></i>instagram</a>
+            <a href="https://www.facebook.com/share/1BXtmYujsu/" target="_blank"> <i class="fab fa-facebook"></i>facebook</a>
+        </nav>
+    </header>
+    <main>
+        <h1>vps comedy</h1>
+        <img src="vps 3.png" alt="VPS Comedy Logo" height="50">
+        <form>
+         <!--yaha par baad me kaam karenge
+            <label for="video">short by</label>
+            <select id="video" name="video">
+                <option value="new to old">New To Old </option>
+                <option value="old to new">Old To New </option>
+                <option value="populer">Populer </option>
+            </select> -->
+        
+            <p id="home"></p>
+        </form>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iC9ZWsNwbj8?si=2erMD03ZA4Kphcgk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Vr6692Ra5e4?si=eBqnNtMIxa_syXGJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZRsp8zVo1R4?si=6Sa_H1vh7Ur_CB9j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/latS8BK8TZM?si=vSJJmEj0TFLO7TRp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vacNHxEq1OY?si=R89kH64x1mR929Ik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iC9ZWsNwbj8?si=WdO0eMeRGZaWuLBk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YOfXtB7-SE0?si=Kubk6mBRN9AmF-p5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2NbqxgAiTe0?si=Uf882pgZxf99rRX_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/p_a0mH2Mr3w?si=BBxgmVUVUfPCGlx-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/V5l2pABjMz4?si=AUL9w_3M1qm39OwS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kevVSzqrhNw?si=mauu5Jx1S2PxtImZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Q7WaYr34YoE?si=yG2dUJ6EEB2Cv4ZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1WAb5AHLJFo?si=ixK7ZQaGSsU5E6Ha" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yKxy0IqYNy8?si=Jmvdkwdg6a61TGgE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LJp6u8tspng?si=lt5vUf3PmClVQrOP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1wHiy5--GMc?si=unWKAg_PnMeSJcc5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        </div>
+        <div id="video-container">
+            <!-- Videos will be loaded here dynamically -->
+        </div>
+    </main>
+    <footer>
+        <!-- Social media icons with links -->
+<div class="social-links">
+    <a href="https://www.youtube.com/@VPSCOMEDY99" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube
+    </a>
+    <a href="https://www.instagram.com/vps______comedy?igsh=Nm03bXp5YjB5eDRv" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://www.facebook.com/share/1BXtmYujsu/" target="_blank">
+        <i class="fab fa-facebook"></i> Facebook
+    </a>
+</div>
+ <P> &copy; 2025 VPS COMEDY ,All RIGHT RESERVED.</P>
+ <p> MADE WITH ❤️ BY WEBENIGMA </p>
+    </footer>
+</body>
+</html>
